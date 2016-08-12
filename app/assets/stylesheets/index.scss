@@ -28,9 +28,14 @@ nav{
 	margin-top: 2em;
 }
 
-nav a{
+a{
 	text-decoration: none;
 	color: $simple-blue;
+}
+
+a:hover{
+	color: white;
+	background-color: $simple-blue;
 }
 
 input[type="submit"]{
