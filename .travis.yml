@@ -1,0 +1,19 @@
+language: ruby
+rvm:
+- 2.3.1
+env:
+- DB=postgresql
+script:
+- rails spec
+before_script:
+- rails db:create RAILS_ENV=test
+- rails db:migrate
+- rails db:test:prepare
+- rails db:migrate RAILS_ENV=test
+- rails db:seed RAILS_ENV=test
+bundler_args: "--binstubs=./bundler_stubs"
+deploy:
+  provider: heroku
+  app: repose
+  api_key:
+    secure: ClDmfHEURQv7q7eDyuYMmxXJYrHZ2hIp4iQzdzaT/WwyrIXNQzm3g2KMpQXG7Zo01V3XM3aLS7u51E+lFAXvtnxmyZWi8E8CjxXp1rBmNuiHfuE/L8WWAbno46Dt0eqNECnwifaW38L+xNGvX7kKrSyOgqcncxklL8m+wlbz6xtQWQDOHGkrMvm0+qr9rMX5zS2xRDHatwMbh+jyrF6k0ktKirrZ711uucrWkGRuCpS7FXaZQiGhuXsgRfUmrWh9FLyeNbGrujg0BlSbjBDQ3mLRt2Ep2VtV660zte8PXFvLTsf3VgP727zvQgrT9ExqUjA/XyQxIEx+7aC3JQ7fMYVSI8+Xza2xDpTkv2PeWmkOZKYtH6TOgeizK5K3MCsVNWx2E6XBRHiZbxEqzxySc51ldVkqadjNOtkLS7/kPbCAKeb6odj0hwaU0s0wtgJUUqXz0hx7x0BqANTYRUod985mONYkRd8qP/OKsIqG26jUWO4YZHeacp9qcEeG76Jm6YtULaUPAuXCtjXpH8KR93YLKB5elOmCsDM2JDQtcwI5uF8BBnU/S6AZeYk4gBbDi0fQ6bqrGaPveZHHdlvH6yblhcukFQe3iOCndpP0cnhreFrsrq+X+hD10oEz2ZOCfOUlNhqoRwCKeyTzMhT/LeWhic+T0R/r8tqY8VebXq4=
