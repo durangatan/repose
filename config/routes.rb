@@ -3,4 +3,5 @@ Rails.application.routes.draw do
 get '/users/:id' => 'users#show', as: 'profile'
 
 root "root#index"
+
 end
