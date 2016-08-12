@@ -27,7 +27,6 @@ ActiveRecord::Schema.define(version: 20160812004213) do
   create_table "events", force: :cascade do |t|
     t.datetime "start_time"
     t.datetime "end_time"
-    t.integer  "survey_id"
     t.integer  "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -45,6 +44,7 @@ ActiveRecord::Schema.define(version: 20160812004213) do
   create_table "surveys", force: :cascade do |t|
     t.integer  "severity"
     t.text     "comments"
+    t.integer  "event_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
