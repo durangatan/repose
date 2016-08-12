@@ -1,0 +1,2 @@
+class Lifeline < ApplicationRecord
+end
