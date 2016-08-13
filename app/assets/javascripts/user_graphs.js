@@ -5,7 +5,7 @@ $(document).ready(function(){
     url: window.location.pathname
   }).done(function(serverData){
     console.log(serverData)
-    var data = serverData;
+    data = serverData;
 
   var margin = {top: 20, right: 15, bottom: 60, left: 60}
         , width = 960 - margin.left - margin.right
@@ -15,9 +15,9 @@ $(document).ready(function(){
       var strictIsoParse = d3.utcParse("%Y-%m-%dT%H:%M:%S.%LZ");
       return new strictIsoParse(d);
   }
-debugger
-  var minDate = getDate("1980-12-03T00:00:00.000Z"),
-      maxDate = getDate("2017-12-03T00:00:00.000Z");
+
+  var minDate = getDate(d3.min(data, function(d){return d[0]})),
+      maxDate = getDate(d3.max(data, function(d){return d[0]}));
       console.log(minDate)
       console.log(minDate)
 
@@ -64,14 +64,30 @@ debugger
 
     var g = main.append("svg:g");
 
-    g.selectAll("scatter-dots")
+    var circles = g.selectAll("scatter-dots")
       .data(data)
       .enter().append("svg:circle")
           .attr("cx", function (d,i) { return x(getDate(d[0]));} )
           .attr("cy", function (d) { return y(d[1]); } )
           .attr("r", 8);
 
+    circles.on('mouseover',function(data){
+      console.log('ooh that tickles')
+      coords = d3.mouse(this)
+      circ = d3.select(this)
+      console.log(event)
+      g.append('text')
+          .attr('class','hovertext')
+          .attr('x',coords[0])
+          .attr('y',coords[1])
+          .text("my date is " + data[0] + "!")
+      }).on('mouseout',function(){
 
+        g.selectAll('.hovertext')
+          .data([])
+          .exit()
+          .remove()
+      })
   })
 
 })
