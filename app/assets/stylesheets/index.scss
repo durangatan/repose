@@ -16,6 +16,11 @@ body{
 
 h1{
 	display: inline-block;
+	font-weight: normal;
+}
+
+h2{
+	font-size: 2em;
 }
 
 i{
@@ -60,4 +65,33 @@ input[type="text"], input[type="password"], input[type="email"]{
 	width: 90%;
 	margin-left: auto;
 	margin-right: auto;
+}
+
+.text-block{
+	width: 50%;
+	display: inline-block;
+}
+
+.text-block p{
+	font-size: 1.5em;
+}
+
+.img-block{
+	float: right;
+	font-size: 21em;
+	margin: 0;
+}
+.info{
+	width: 100%;
+	background-color:#fcfbf9;
+}
+
+
+.dash-trailing:after {
+    background: #0d97ff;
+    display: block;
+    content: '';
+    height: 4px;
+    margin: 15px 0;
+    width: 40px;
 }
