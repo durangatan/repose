@@ -26,6 +26,9 @@ gem 'jbuilder', '~> 2.5'
 # Use ActiveModel has_secure_password
 gem 'bcrypt', '~> 3.1.7'
 
+gem 'owlcarousel-rails'
+
+
 gem 'clearance'
 gem "font-awesome-rails"
 gem 'simplecov', :require => false, :group => :test

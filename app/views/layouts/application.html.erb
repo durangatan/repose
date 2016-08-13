@@ -1,25 +1,24 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <script src="http://d3js.org/d3.v3.min.js"></script>
-  <script src="https://d3js.org/d3-time-format.v2.min.js"></script>
+
   <%= javascript_include_tag 'application' %>
   <%= stylesheet_link_tag 'application' %>
   <%= csrf_meta_tag %>
 </head>
 <body>
 <div id="container">
-  <header id ="logo">
-  <i class="fa fa-leaf fa-lg" aria-hidden="true"></i><h1> repose </h1>
-  <nav>
-    <% if signed_in? -%>
-      <%= button_to t(".sign_out"), sign_out_path, method: :delete %>
-    <% else -%>
-      <%= link_to t(".sign_in"), sign_in_path %>
-    <% end -%>
-  </nav>
+<header id ="logo">
+<i class="fa fa-leaf fa-lg" aria-hidden="true"></i><h1> repose </h1>
+<nav>
+  <% if signed_in? %>
+    <%= button_to t(".sign_out"), sign_out_path, method: :delete %>
+  <% else %>
+    <%= link_to t(".sign_in"), sign_in_path %>
+  <% end %>
+</nav>
 
-  </header>
+</header>
 
   <div id="flash">
     <% flash.each do |key, value| -%>

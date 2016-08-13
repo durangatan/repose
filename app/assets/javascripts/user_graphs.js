@@ -1,10 +1,10 @@
 $(document).ready(function(){
-  var startTimes = []
+  var startTimes = [];
   $.ajax({
     method: "GET",
     url: window.location.pathname
   }).done(function(serverData){
-    console.log(serverData)
+    console.log(serverData);
     data = serverData;
 
   var margin = {top: 20, right: 15, bottom: 60, left: 60}
