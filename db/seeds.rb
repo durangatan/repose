@@ -38,7 +38,7 @@ unless Rails.env.production?
 	Lifeline.delete_all
 	Availability.delete_all
 
-	10.times do 
+	10.times do
 		User.create!(
 			first_name: Faker::Name.first_name,
 			last_name: Faker::Name.last_name,
@@ -47,34 +47,34 @@ unless Rails.env.production?
 			)
 	end
 
-	25.times do 
+	25.times do
 		lifeline =	Lifeline.create!(
 			first_name: Faker::Name.first_name,
 			last_name: Faker::Name.last_name,
 			phone: Faker::PhoneNumber.phone_number,
 			user_id: random_user.id
 			)
-		
-		if lifeline.id	
+
+		if lifeline.id
 			rand_hour = random_hour
 			Availability.create!(
 				start_hour: rand_hour,
 				end_hour: (rand_hour + (1..4).to_a.sample),
 				weekday: weekday_sample,
-				lifeline_id: lifeline.id 
+				lifeline_id: lifeline.id
 				)
 		end
 	end
 
 
 
-	20.times do 
+	200.times do
 		event =	Event.create!(
 			user_id: random_user.id,
 			start_time: random_time,
 			end_time: random_time
-			) 
-		if event.id 
+			)
+		if event.id
 			Survey.create!(
 				severity: radio_sample,
 				comments: Faker::Lorem.paragraph,
