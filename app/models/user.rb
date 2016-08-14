@@ -8,7 +8,7 @@ class User < ApplicationRecord
   has_many :availabilities, through: :lifelines
 
 
-  def create_bearer_token
+  def generate_bearer_token
     bearer_token ||= SecureRandom.base64(64)
     save
     bearer_token
