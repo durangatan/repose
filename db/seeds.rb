@@ -6,6 +6,7 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
+
 def weekday_sample
 	(0..6).to_a.sample
 end
@@ -84,3 +85,9 @@ unless Rails.env.production?
 	end
 end
 
+User.create(
+	first_name: "joe",
+	last_name: "duran",
+	email: "joeduran8@gmail.com",
+	password: "password"
+	)
