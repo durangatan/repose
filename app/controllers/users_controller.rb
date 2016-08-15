@@ -12,10 +12,11 @@ class UsersController < ApplicationController
         data_point.push(entry.start_time)
         data_point.push(entry.survey.severity)
         # COULD WE d3 THE DURATION: MORE DURATION = BIGGER CIRCLE
-        # data_point.push(entry.duration)
         # HOVER COULD DISPLAY COMMENTS, OR ACT AS A LINK
         # data_point.push(entry.survey.id)  for linking
-        # data_point.push(entry.survey.comments)
+        data_point.push(entry.survey.comments)
+        data_point.push(entry.duration_format)
+        data_point.push(entry.duration)
 
         chart_data.push(data_point)
       end

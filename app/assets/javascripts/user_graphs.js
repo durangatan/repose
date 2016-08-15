@@ -5,7 +5,6 @@ $(document).ready(function(){
     method: "GET",
     url: window.location.pathname
   }).done(function(serverData){
-    console.log(serverData);
     data = serverData;
 
   var margin = {top: 20, right: 15, bottom: 60, left: 60}
@@ -19,8 +18,6 @@ $(document).ready(function(){
 
   var minDate = getDate(d3.min(data, function(d){return d[0]})),
       maxDate = getDate(d3.max(data, function(d){return d[0]}));
-      console.log(minDate)
-      console.log(minDate)
 
 
     var x = d3.time.scale()
@@ -70,18 +67,19 @@ $(document).ready(function(){
       .enter().append("svg:circle")
           .attr("cx", function (d,i) { return x(getDate(d[0]));} )
           .attr("cy", function (d) { return y(d[1]); } )
-          .attr("r", 8);
+          // .attr("r", 8);
+          .attr("r", function(d) {
+              return d[4] / 6 + 6;
+          });
 
     circles.on('mouseover',function(data){
-      console.log('ooh that tickles')
       coords = d3.mouse(this)
       circ = d3.select(this)
-      console.log(event)
       g.append('text')
           .attr('class','hovertext')
           .attr('x',coords[0])
           .attr('y',coords[1])
-          .text("my date is " + data[0] + "!")
+          .text(data[3] + " - " + data[2].substr(0, 40) + "...")
       }).on('mouseout',function(){
 
         g.selectAll('.hovertext')
