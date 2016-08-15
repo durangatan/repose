@@ -1,11 +1,15 @@
 {
   "RSpec": {
     "coverage": {
-      "/Users/Joe/devbootcamp/phase-3/repose/spec/models/availability_spec.rb": [
+      "/Users/Joe/devbootcamp/phase-3/repose/spec/api_users_controller_spec.rb": [
+        1,
+        1,
+        1,
+        1,
+        1,
         1,
         null,
-        1,
-        1,
+        null,
         null
       ],
       "/Users/Joe/devbootcamp/phase-3/repose/spec/rails_helper.rb": [
@@ -272,12 +276,67 @@
       "/Users/Joe/devbootcamp/phase-3/repose/config/routes.rb": [
         1,
         null,
+        1,
         null,
         1,
+        null,
+        1,
+        1,
+        1,
+        1,
+        1,
+        null,
         null,
         null
       ],
       "/Users/Joe/devbootcamp/phase-3/repose/app/helpers/application_helper.rb": [
+        1,
+        1,
+        0,
+        null,
+        null
+      ],
+      "/Users/Joe/devbootcamp/phase-3/repose/app/controllers/api/v1/users_controller.rb": [
+        1,
+        1,
+        0,
+        null,
+        0,
+        null,
+        null,
+        1,
+        0,
+        0,
+        0,
+        0,
+        null,
+        0,
+        null,
+        null,
+        null,
+        null
+      ],
+      "/Users/Joe/devbootcamp/phase-3/repose/app/controllers/api/v1/base_controller.rb": [
+        1,
+        1,
+        null,
+        1,
+        null,
+        1,
+        0,
+        null,
+        null
+      ],
+      "/Users/Joe/devbootcamp/phase-3/repose/app/controllers/application_controller.rb": [
+        1,
+        1,
+        1,
+        null
+      ],
+      "/Users/Joe/devbootcamp/phase-3/repose/spec/models/availability_spec.rb": [
+        1,
+        null,
+        1,
         1,
         null
       ],
@@ -302,6 +361,13 @@
         1,
         1,
         1,
+        null,
+        1,
+        0,
+        null,
+        null,
+        null,
+        null,
         null
       ],
       "/Users/Joe/devbootcamp/phase-3/repose/spec/models/lifeline_spec.rb": [
@@ -341,6 +407,6 @@
         null
       ]
     },
-    "timestamp": 1470970571
+    "timestamp": 1471200622
   }
 }
