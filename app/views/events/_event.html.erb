@@ -1,4 +1,6 @@
 <div class="event dash-trailing">
-	<h2><%= date_format(event.start_time) %> - <%= date_format(event.end_time) %></h2>
+	<h2><%= date_format(event.start_time) %></h2>
 	<h3> Severity: <%=event.survey.severity %> </h3>
+	<h3> Duration: <%= event.duration_format %></h3>
+	<p><%= event.survey.comments %></p>
 </div>

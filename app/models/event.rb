@@ -4,8 +4,13 @@ class Event < ApplicationRecord
 
   def duration
     ((self.end_time - self.start_time) / 1.minutes).to_i
-    # MAY NEED TO WRITE THIS METHOD OURSELF
-    # distance_of_time_in_words(self.end_time, self.start_time)
+  end
+
+  def duration_format
+  	elapsed = (self.end_time - self.start_time).to_i
+    hours = elapsed / 3600
+    dt = DateTime.strptime(elapsed.to_s, '%s').utc
+    "#{hours}:#{dt.strftime "%M"}"
   end
 
 end
