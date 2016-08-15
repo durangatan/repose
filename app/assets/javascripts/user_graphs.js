@@ -79,7 +79,7 @@ $(document).ready(function(){
           .attr('class','hovertext')
           .attr('x',coords[0])
           .attr('y',coords[1])
-          .text(data[3] + " - " + data[2])
+          .text(data[3] + " - " + data[2].substr(0, 40) + "...")
       }).on('mouseout',function(){
 
         g.selectAll('.hovertext')
