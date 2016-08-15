@@ -6,7 +6,7 @@ class Api::V1::UsersController < Api::V1::BaseController
 	end
 
 	def create
-		user = User.create(params[:user])
+		user = User.create(user_params)
 		puts params
 		if user && user.id
 			render(json: Api::V1::UserSerializer.new(user).to_json)
@@ -15,4 +15,7 @@ class Api::V1::UsersController < Api::V1::BaseController
 		end
 	end
 
+	def user_params
+	   params.require(:user).permit(:email, :password)
+	end
 end
