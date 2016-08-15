@@ -10,7 +10,7 @@ class Api::V1::EventsController < Api::V1::BaseController
     end
     survey = params[:survey][0]
     if survey
-      Survey.create!(
+      Survey.create(
         severity: survey[:severity],
         sleep_quality: survey[:sleep_quality][0],
         comments: survey[:comments],
