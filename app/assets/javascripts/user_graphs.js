@@ -1,4 +1,5 @@
 $(document).ready(function(){
+
   var startTimes = [];
   $.ajax({
     method: "GET",
