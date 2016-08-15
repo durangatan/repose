@@ -11,10 +11,10 @@ class Api::V1::EventsController < Api::V1::BaseController
     survey = params[:survey][0]
     if survey
       Survey.create!{
-        severity:survey[:severity],
-        sleep_quality: survey[:sleep_quality],
-        comments:survey[:comments],
-        causation: survey[:causation],
+        severity:survey["severity"].to_i,
+        sleep_quality: survey["sleep_quality"][0].to_i,
+        comments:survey["comments"],
+        causation: survey["causation"],
         event_id: event.id
       }
     end
