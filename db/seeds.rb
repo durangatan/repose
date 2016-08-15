@@ -12,7 +12,7 @@ def weekday_sample
 end
 
 def radio_sample
-	(0..4).to_a.sample
+	(1..5).to_a.sample
 end
 
 def random_hour
@@ -29,6 +29,15 @@ end
 
 def random_time
 	Date.today - (10000*rand())
+end
+
+def random_duration
+	coin_flip = (0..1).to_a.sample
+	if coin_flip == 0
+		(10..120).to_a.sample.minutes
+	else
+		(10..30).to_a.sample.minutes
+	end
 end
 
 unless Rails.env.production?
@@ -70,10 +79,11 @@ unless Rails.env.production?
 
 
 	200.times do
+		start_time = random_time
 		event =	Event.create!(
 			user_id: random_user.id,
-			start_time: random_time,
-			end_time: random_time
+			start_time: start_time,
+			end_time: start_time + random_duration
 			)
 		if event.id
 			Survey.create!(
@@ -89,5 +99,12 @@ User.create(
 	first_name: "joe",
 	last_name: "duran",
 	email: "joeduran8@gmail.com",
+	password: "password"
+	)
+
+User.create(
+	first_name: "adam",
+	last_name: "baxter",
+	email: "adamscottbaxter@gmail.com",
 	password: "password"
 	)
