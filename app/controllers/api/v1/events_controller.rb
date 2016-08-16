@@ -20,4 +20,12 @@ class Api::V1::EventsController < Api::V1::BaseController
     end
   end
 
+  def index
+    user = User.find_by(params[:id])
+    events = user.events
+    event_json = events.map do |event|
+      Api::V1::EventSerializer.new(event).to_json
+    end
+    render json: event_json
+  end
 end

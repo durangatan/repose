@@ -7,7 +7,9 @@ root "root#index"
 namespace :api do 
 	namespace :v1 do 
 		resources :events, only: [:create]
-		resources :users, only: [:show, :update, :create, :destroy]
+		resources :users, only: [:show, :update, :create, :destroy] do 
+      resources :events, only: :index
+    end
 		resources :sessions, only: [:create]
 		end
 	end

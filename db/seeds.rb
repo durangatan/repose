@@ -7,6 +7,10 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 
+def gps_shuffle
+	[0.001, 0.002, -0.001, -0.002, 0.0001, 0.0003, -0.00004].sample
+end
+
 def weekday_sample
 	(0..6).to_a.sample
 end
@@ -40,7 +44,6 @@ def random_duration
 	end
 end
 
-unless Rails.env.production?
 
 	User.delete_all
 	Event.delete_all
@@ -76,14 +79,15 @@ unless Rails.env.production?
 		end
 	end
 
-
-
 	200.times do
 		start_time = random_time
 		event =	Event.create!(
 			user_id: random_user.id,
 			start_time: start_time,
-			end_time: start_time + random_duration
+			end_time: start_time + random_duration,
+			latitude: (41.878114 + gps_shuffle),
+			longitude: (-87.629798 + gps_shuffle),
+
 			)
 		if event.id
 			Survey.create!(
@@ -93,7 +97,7 @@ unless Rails.env.production?
 				)
 		end
 	end
-end
+
 
 User.create(
 	first_name: "joe",
