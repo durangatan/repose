@@ -1,7 +1,7 @@
 class Api::V1::EventSerializer < Api::V1::BaseSerializer
   attributes :start_time, :end_time, :latitude, :longitude
 
-  has_many :surveys
+  has_one :survey
 
   def created_at
     object.created_at.in_time_zone.iso8601 if object.created_at
