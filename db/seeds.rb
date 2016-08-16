@@ -79,8 +79,6 @@ end
 		end
 	end
 
-
-
 	200.times do
 		start_time = random_time
 		event =	Event.create!(
