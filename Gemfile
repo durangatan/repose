@@ -29,6 +29,7 @@ gem 'bcrypt', '~> 3.1.7'
 gem 'owlcarousel-rails'
 gem "active_model_serializers", github: "rails-api/active_model_serializers"
 
+gem 'faker', '~>1.6.6'
 
 gem 'clearance'
 gem "font-awesome-rails"
@@ -42,7 +43,6 @@ gem 'd3-rails'
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platform: :mri
-  gem 'faker', '~>1.6.6'
 end
 
 group :development do
