@@ -40,7 +40,6 @@ def random_duration
 	end
 end
 
-unless Rails.env.production?
 
 	User.delete_all
 	Event.delete_all
@@ -93,7 +92,7 @@ unless Rails.env.production?
 				)
 		end
 	end
-end
+
 
 User.create(
 	first_name: "joe",
