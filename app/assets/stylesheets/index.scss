@@ -1,97 +1,40 @@
-$simple-blue: #0d97ff;
-$simple-font: 'Helvetica Neue';
-
-@import "font-awesome";
-
-body{
-	font-family: $simple-font;
-	color: black;
+/* Remove the navbar's default margin-bottom and rounded borders */
+body {
+	font-family: "Helvetica Neue";
 }
 
-#logo{
-	color: $simple-blue;
-	height: 50px;
-	width: 100%;
+.navbar {
+	margin-bottom: 0;
+	border-radius: 0;
 }
 
-h1{
-	display: inline-block;
-	font-weight: normal;
+/* Add a gray background color and some padding to the footer */
+footer {
+	background-color: #f2f2f2;
+	padding: 25px;
 }
 
-h2{
-	font-size: 2em;
+body {
+	background: rgba(213,238,245,1);
+	background: -moz-linear-gradient(-45deg, rgba(213,238,245,1) 0%, rgba(52,155,183,1) 59%, rgba(46,126,148,1) 85%, rgba(46,126,148,1) 100%);
+	background: -webkit-gradient(left top, right bottom, color-stop(0%, rgba(213,238,245,1)), color-stop(59%, rgba(52,155,183,1)), color-stop(85%, rgba(46,126,148,1)), color-stop(100%, rgba(46,126,148,1)));
+	background: -webkit-linear-gradient(-45deg, rgba(213,238,245,1) 0%, rgba(52,155,183,1) 59%, rgba(46,126,148,1) 85%, rgba(46,126,148,1) 100%);
+	background: -o-linear-gradient(-45deg, rgba(213,238,245,1) 0%, rgba(52,155,183,1) 59%, rgba(46,126,148,1) 85%, rgba(46,126,148,1) 100%);
+	background: -ms-linear-gradient(-45deg, rgba(213,238,245,1) 0%, rgba(52,155,183,1) 59%, rgba(46,126,148,1) 85%, rgba(46,126,148,1) 100%);
+	background: linear-gradient(135deg, rgba(213,238,245,1) 0%, rgba(52,155,183,1) 59%, rgba(46,126,148,1) 85%, rgba(46,126,148,1) 100%);
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#d5eef5', endColorstr='#2e7e94', GradientType=1 );
 }
 
-i{
-	margin-right: 5px;
-}
-nav{
-	float: right;
-	width: auto;
-	display: inline-block;
-	margin-top: 2em;
-}
-
-a{
-	text-decoration: none;
-	color: $simple-blue;
+.cover-image {
+	background-image: image-url("hero-backpack.jpg");
+	background-size: 100% 100%;
+	padding-bottom: 30%;
+	background-color: #333e48;
+	background-position: center center;
+	opacity: .9;
+	overflow: hidden;
 }
 
-a:hover{
+.jumbotron {
 	color: white;
-	background-color: $simple-blue;
-}
-
-input[type="submit"]{
-	border:none;
-	background-color: $simple-blue;
-	color: white;
-}
-
-input[type="text"], input[type="password"], input[type="email"]{
-	width: 50%;
-	height: 2em;
-}
-
-#clearance{
-	width: 75%;
-	margin-left: auto;
-	margin-right: auto;
-
-}
-
-#container{
-	width: 90%;
-	margin-left: auto;
-	margin-right: auto;
-}
-
-.text-block{
-	width: 50%;
-	display: inline-block;
-}
-
-.text-block p{
-	font-size: 1.5em;
-}
-
-.img-block{
-	float: right;
-	font-size: 21em;
-	margin: 0;
-}
-.info{
-	width: 100%;
-	background-color:#fcfbf9;
-}
-
-
-.dash-trailing:after {
-    background: #0d97ff;
-    display: block;
-    content: '';
-    height: 4px;
-    margin: 15px 0;
-    width: 40px;
 }
