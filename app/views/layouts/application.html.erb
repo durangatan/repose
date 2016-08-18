@@ -7,22 +7,13 @@
 <%= javascript_include_tag 'application' %>
 <%= stylesheet_link_tag 'application' %>
 <%= csrf_meta_tag %>
-  
+<title>REPOSE</title>
 </head>
 <body>
 <div id="container">
-<header id ="logo">
-<i class="fa fa-leaf fa-lg" aria-hidden="true"></i><h1> repose </h1>
-<nav>
-  <% if signed_in? %>
-    <%= button_to t(".sign_out"), sign_out_path, method: :delete %>
-  <% else %>
-    <%= link_to t(".sign_in"), sign_in_path %>
-  <% end %>
-</nav>
-
-</header>
-
+  <header>
+  <%= image_tag("icon-transparent@100.png") %> <h1 class="title"> REPOSE </h1>
+  </header>
   <div id="flash">
     <% flash.each do |key, value| -%>
       <div id="flash_<%= key %>"><%=h value %></div>
